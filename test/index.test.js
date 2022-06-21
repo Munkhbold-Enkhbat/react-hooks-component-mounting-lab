@@ -29,8 +29,6 @@ describe('<App />', () => {
 
     appWrapper.unmount()
   });
-
-
 });
 
 

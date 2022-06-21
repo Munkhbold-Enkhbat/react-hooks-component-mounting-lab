@@ -10,11 +10,7 @@ class App extends React.Component {
 
   //Your code here:
   componentDidMount() {
-    fetch(`http://localhost:3000/timers`)
-    .then(r => r.json())
-    .then(timer => {
-      this.setState([...this.state.timerIDs, timer])
-    })
+    this.handleAddTimer()
   }
 
   // No need to modify anything in render or the class methods below
