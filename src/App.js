@@ -1,24 +1,21 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import Timer from './Timer'
 
-class App extends Component {
+class App extends React.Component {
 
   //no props being used here, so we can use the shorthand declaration of state
   state = {
     timerIDs: []
   }
 
-
   //Your code here:
-
-
-
-
-
-
-
-
+  componentDidMount() {
+    fetch(`http://localhost:3000/timers`)
+    .then(r => r.json())
+    .then(timer => {
+      this.setState([...this.state.timerIDs, timer])
+    })
+  }
 
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
